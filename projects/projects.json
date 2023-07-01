@@ -2,7 +2,7 @@
   {
     "name": "The Newsroom Experience",
     "desc": "This project aims to an interactive web application that simulates a newsroom experience for summer camp students.An Instructor",
-    "image": "notystackandroid",
+    "image": "news-room",
     "category": "mern",
     "links": {
       "view": "https://ass-12-5ec7c.web.app/",
@@ -32,11 +32,11 @@
   {
     "name": "School Management System  ",
     "desc": "Welcome to our School Management System, where efficiency meets education. Our user-friendly interface allows students, ",
-    "image": "notystackandroid",
+    "image": "school",
     "category": "mern",
     "links": {
       "view": "https://slsuyel.github.io/school/",
-      "code": "https://github.com/slsuyel"
+      "code": "https://github.com/slsuyel/school"
     }
   },
   {
