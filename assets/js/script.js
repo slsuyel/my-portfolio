@@ -93,7 +93,7 @@ $(document).ready(function () {
 
             }, function (error) {
                 console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
+                alert("Opps Failed! Please call  ☎️ +8801722597565 (sell & whatsapp) ");
             });
     });
 

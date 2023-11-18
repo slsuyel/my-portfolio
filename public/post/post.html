@@ -60,28 +60,76 @@
 </head>
 
 <body>
-    <form id="uploadForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br>
 
-        <label for="desc">Description:</label>
-        <textarea id="desc" name="desc" required></textarea><br>
+    <div id="passcodeContainer" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <form id="passcodeForm">
+            <label for="passcode">Enter Passcode:</label>
+            <input type="password" id="passcode" name="passcode" required>
+            <button type="button" onclick="checkPasscode()">Submit</button>
+        </form>
+    </div>
+    <div id="formContainer" style="display: none;">
+        <form id="uploadForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
 
-        <label for="image">Image:</label>
-        <input type="text" id="image" name="image" required><br>
+            <label for="desc">Description:</label>
+            <textarea id="desc" name="desc" required></textarea><br>
 
-        <label for="category">Category:</label>
-        <input type="text" id="category" name="category" required><br>
+            <label for="image">Image:</label>
+            <input type="text" id="image" name="image" required><br>
 
-        <label for="viewLink">View Link:</label>
-        <input type="url" id="viewLink" name="viewLink" required><br>
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" required><br>
 
-        <label for="codeLink">Code Link:</label>
-        <input type="url" id="codeLink" name="codeLink" required><br>
+            <label for="viewLink">View Link:</label>
+            <input type="url" id="viewLink" name="viewLink" required><br>
 
-        <button type="button" onclick="submitForm()">Submit</button>
-    </form>
+            <label for="codeLink">Code Link:</label>
+            <input type="url" id="codeLink" name="codeLink" required><br>
 
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+
+    <script>
+        // Hash the passcode using SHA-256
+        var correctPasscodeHash = "23fb6390906553f54580cf9da3854223fc4bfd6c140ae15d3d40c6a8c12fe794"; 
+
+        function checkPasscode() {
+            var passcodeInput = document.getElementById("passcode").value;
+            var passcodeInputHash = sha256(passcodeInput);
+
+            if (passcodeInputHash === correctPasscodeHash) {
+                // Show the form and hide the passcode input
+                document.getElementById("passcodeContainer").style.display = "none";
+                document.getElementById("formContainer").style.display = "flex";
+            } else {
+                // Display an error or alert for incorrect passcode
+                alert("Incorrect passcode. Please try again.");
+            }
+        }
+
+        function submitForm() {
+            // Your existing submitForm logic
+        }
+    </script>
+    <!-- <script>
+        function checkPasscode() {
+            var passcodeInput = document.getElementById("passcode").value;
+            var correctPasscode = "01722597565";
+
+            if (passcodeInput === correctPasscode) {
+                document.getElementById("passcodeContainer").style.display = "none";
+                document.getElementById("formContainer").style.display = "flex";
+            } else {
+                // Display an error or alert for incorrect passcode
+                alert("Incorrect passcode. Please try again.");
+            }
+        }
+
+    </script> -->
     <script src="./post.js"></script>
 </body>
 
